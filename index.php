@@ -146,7 +146,7 @@ function getPerfectPartner($lastname ,$name ,$patronomyc, $example_persons_array
     $randomPerson = $example_persons_array[random_int(0, $countArr)]['fullname'];
     $GenderRandomPerson = getGenderFromName($randomPerson);
 
-    while($identificationGender == $GenderRandomPerson){
+    while($identificationGender == $GenderRandomPerson or $GenderRandomPerson == 'Неопределенный пол'){
         $randomPerson = $example_persons_array[random_int(0, $countArr)]['fullname'];
         $GenderRandomPerson = getGenderFromName($randomPerson);
         }
