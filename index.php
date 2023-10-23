@@ -140,7 +140,10 @@ function getPerfectPartner($lastname ,$name ,$patronomyc, $example_persons_array
     $fullname = mb_convert_case($fullname, MB_CASE_TITLE, "UTF-8");
 
     $identificationGender = getGenderFromName($fullname);
-    
+    while($identificationGender == 'Неопределенный пол'){
+        $identificationGender = getGenderFromName($fullname);
+        }
+
     $countArr = count($example_persons_array) - 1;
 
     $randomPerson = $example_persons_array[random_int(0, $countArr)]['fullname'];
